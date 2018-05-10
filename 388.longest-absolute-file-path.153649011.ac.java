@@ -62,15 +62,29 @@
  * another path aaaaaaaaaaaaaaaaaaaaa/sth.png.
  */
 class Solution {
+    //Tag:Google
     public int lengthLongestPath(String input) {
-        String[] paths = input.split("\n");
-        int[] stack = new int[paths.length+1];
-        int maxLen = 0;
-        for(String s:paths){
-            //each level, add previous level and current level length, if is final level, update max
-            int lev = s.lastIndexOf("\t")+1, curLen = stack[lev+1] = stack[lev]+s.length()-lev+1;
-            if(s.contains(".")) maxLen = Math.max(maxLen, curLen-1);
+        //each line is a new entry
+        String[] path = input.split("\n");
+        //store current max length for each level, similar like backtrack 
+        int[] stack = new int[path.length+1];
+        int max = 0;
+        for(String s: path){
+            //find level by counting number of /t
+            //the return of lastIndexOf is the number of the string, 0 1 2 3....
+            //+1 to handle first level
+            int level = s.lastIndexOf("\t")+1;
+            //alwasy use next level in case previous level is -1
+            //  --\t count as 1 when using length()function
+            //+1 for "/" seperator of addition level
+            int curLength = stack[level+1] = stack[level]+s.length()-level+1;
+            //if it is a file, then update the max length
+            if(s.contains(".")){
+                //minus 1 since root does not need "\"
+                max = Math.max(max, curLength-1);
+            }
+
         }
-        return maxLen;
+        return max;
     }
 }
