@@ -57,15 +57,39 @@
  * 
  */
 public class Solution {
+    //Tag:Google
     public String licenseKeyFormatting(String S, int K) {
-        //easy, just remember those methods.
-        
+        //Easy, but remember, insert is much slower than insert
+        int count = 0;
         StringBuilder sb = new StringBuilder();
-        for(int i = S.length()-1; i>=0; i--){
-            if(S.charAt(i) != '-'){
-                sb.append(sb.length() % (K+1) == K? '-': "").append(S.charAt(i));  //k+1 so we omit 0
+        int length = S.length();
+        for(int i=length-1; i>=0; i--){
+            if(S.charAt(i)!='-'){
+                sb.append(S.charAt(i));
+                count++;
+                if(count==K){
+                    sb.append("-");
+                    count=0;
+                }
             }
         }
-        return sb.reverse().toString().toUpperCase();
+        String tmp = sb.reverse().toString().toUpperCase();
+        if(tmp.equals("")) return tmp;
+        return tmp.charAt(0)=='-'? tmp.substring(1): tmp;
     }
 }
+
+//Another way, very similar
+// public class Solution {
+//     public String licenseKeyFormatting(String S, int K) {
+//         //easy, just remember those methods.
+        
+//         StringBuilder sb = new StringBuilder();
+//         for(int i = S.length()-1; i>=0; i--){
+//             if(S.charAt(i) != '-'){
+//                 sb.append(sb.length() % (K+1) == K? '-': "").append(S.charAt(i));  //k+1 so we omit 0
+//             }
+//         }
+//         return sb.reverse().toString().toUpperCase();
+//     }
+// }
