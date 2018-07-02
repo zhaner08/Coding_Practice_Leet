@@ -66,7 +66,8 @@
  */
 class Solution {
     public boolean validUtf8(int[] data) {
-        //not a good question, skip
+        //Tag:Google
+        //Tag:Bit
         if(data==null || data.length==0) return false;
         boolean isValid = true;
         for(int i=0;i<data.length;i++) {
@@ -84,7 +85,7 @@ class Solution {
                 return false;
             }
             for(int j=1;j<numberOfBytes;j++) { // check that the next n bytes start with 10xxxxxx
-                if(i+j>=data.length) return false;
+                if(i+j>=data.length) return false; //make sure not pass the max
                 if((data[i+j] & 192) != 128) return false; // 192(11000000), 128(10000000)
             }
             i=i+numberOfBytes-1;
