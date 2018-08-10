@@ -55,6 +55,15 @@
  * creating all test cases.
  */
 public class Solution {
+    //Tag:Google
+    //Tag:Dropbox
+    //Tag:Uber
+    //Tag:Square
+    //Tag:Amazon
+    //Tag:Bloomberg
+    //Tag:Snapchat
+    //Tag:TwoSigma
+    //Tag:Array
     public void gameOfLife(int[][] board) {
         //Set for states, 00 01 10 11, each state has two bits, bit2bit1, bit2 countains next state, bit1 contains current
         //If live-1, dead 0

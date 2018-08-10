@@ -36,17 +36,24 @@
  * 
  */
 class Solution {
+    //Tag:Google
+    //Tag:Adobe
+    //Tag:Bloomberg
+    //Tag:eBay
+    //Tag:Array
+    //Tag:Math
     public int[] plusOne(int[] digits) {
-        for(int i=digits.length-1; i>=0; i--){
+        int length = digits.length;
+        for(int i=length-1; i>=0; i--){
             if(digits[i]<9){
                 digits[i]++;
                 return digits;
             }else{
-                digits[i] = 0;
+                digits[i]=0;
             }
         }
-        int[] newa = new int[digits.length+1];
-        newa[0] = 1;
-        return newa;
+        int[] result = new int[length+1];
+        result[0]=1;
+        return result;
     }
 }
