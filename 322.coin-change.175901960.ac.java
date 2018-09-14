@@ -37,19 +37,25 @@
  * creating all test cases.
  */
 class Solution {
+    //Tag:Amazon
+    //Tag:Microsoft
+    //Tag:DP
     public int coinChange(int[] coins, int amount) {
         if(coins==null || coins.length==0 || amount ==0 ) return 0;
         int[] dp = new int[amount+1];
         Arrays.sort(coins);
         for(int i=1; i<=amount; i++){
+            //Set to max first
             dp[i] = Integer.MAX_VALUE;
             boolean found = false;
             for(int j=0; j<coins.length; j++){
+                //<= to make sure coins match
                 if(coins[j]<=i && dp[i-coins[j]]!=-1){
                     found = true;
                     dp[i] = Math.min(dp[i], dp[i-coins[j]]+1);
                 }
             }
+            //set -1 if not found
             if(!found) dp[i] = -1;
         }
         return dp[amount];

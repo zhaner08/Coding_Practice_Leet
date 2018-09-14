@@ -53,53 +53,45 @@
  * }
  */
 public class Codec {
-    private static String nullstring = "null";
-    private static String spliter = ",";
+    //Tag:All
+    //Tag:Design
+    private static final String spliter = ",";
+    private static final String NN = "X";
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-        //List<Integer> result = new ArrayList<Integer>();
         StringBuilder sb = new StringBuilder();
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
-        q.add(root);
-        while(!q.isEmpty()){
-            
-            TreeNode tmp = q.poll();
-            if(tmp!=null){
-                q.add(tmp.left);
-                q.add(tmp.right);
-            }
-            sb.append(tmp==null? nullstring: tmp.val).append(spliter);
-            //result.add(tmp==null? null: tmp.val);
-        }
-        //Integer[] finalresult = result.toArray(new Integer[result.size()]);
-        //System.out.println(sb.toString());
+        buildString(root, sb);
         return sb.toString();
     }
 
+    //Build with pre order
+    private void buildString(TreeNode node, StringBuilder sb) {
+        if (node == null) {
+            sb.append(NN).append(spliter);
+        } else {
+            sb.append(node.val).append(spliter);
+            buildString(node.left, sb);
+            buildString(node.right,sb);
+        }
+    }
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
-        //data = data.substring(1, data.length()-1);
-        String[] dataArray = data.split(",");
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
-        q.add(dataArray[0].equals(nullstring) ? null: new TreeNode(Integer.parseInt(dataArray[0])));
-        TreeNode root = q.peek()==null? null: q.peek();
-        int counter=1;
-        while(!q.isEmpty()){
-            TreeNode tmp = q.poll();
-            if(tmp!=null && counter<dataArray.length){
-                TreeNode newNode = dataArray[counter].equals(nullstring) ? null: new TreeNode(Integer.parseInt(dataArray[counter]));
-                tmp.left = newNode;
-                if(newNode!=null) q.add(newNode);
-                counter++;
-                newNode = dataArray[counter].equals(nullstring) ? null: new TreeNode(Integer.parseInt(dataArray[counter]));
-                tmp.right = newNode;
-                if(newNode!=null) q.add(newNode);
-                counter++;
-            }
+        Queue<String> nodes = new LinkedList<>();
+        nodes.addAll(Arrays.asList(data.split(spliter)));
+        return buildTree(nodes);
+    }
+    
+    //every end will have a X, build with dfs in preorder as well.
+    private TreeNode buildTree(Queue<String> nodes) {
+        String val = nodes.poll();
+        if (val.equals(NN)) return null;
+        else {
+            TreeNode node = new TreeNode(Integer.valueOf(val));
+            node.left = buildTree(nodes);
+            node.right = buildTree(nodes);
+            return node;
         }
-        
-        return root;
     }
 }
 

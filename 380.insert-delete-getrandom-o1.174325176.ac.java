@@ -50,6 +50,15 @@
  * 
  */
 class RandomizedSet {
+    //Tag:Linkedin
+    //Tag:Amazon
+    //Tag:Google
+    //Tag:Bloomberg
+    //Tag:Yelp
+    //Tag:Apple
+    //Tag:Array
+    //Tag:HashTable
+    //Tag:Design
     List<Integer> l;
     Map<Integer, Integer> map;
     java.util.Random r;

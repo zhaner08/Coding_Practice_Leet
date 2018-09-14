@@ -28,6 +28,9 @@
  * 
  */
 class Solution {
+    //Tag:Google, Tag:Amazon, Tag:Facebook, Tag:Airbnb
+    //Tag:Array
+    //Tag:HashTable
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> m = new HashMap<Integer, Integer>();
         for(int i=0; i<nums.length; i++){
@@ -40,4 +43,3 @@ class Solution {
         return new int[]{};
     }
 }
-

@@ -47,6 +47,9 @@
  * all test cases.
  */
 public class Solution {
+    //Tag:Google
+    //Tag:HashTable
+    //O(n), O(n)
     public String getHint(String secret, String guess) {
         int[] tmp = new int[10];
         int bull=0;

@@ -22,6 +22,11 @@
  * answer must be a substring, "pwke" is a subsequence and not a substring.
  */
 class Solution {
+    //Tag:All
+    //Tag:TwoPointer
+    //Tag:HashTable
+    //Tag:String
+    //O(n) use both hashmap or two pointers, 26 for space
     public int lengthOfLongestSubstring(String s) {
         int result = 0;
         //use hashmap to keep index, if found, compare where it can get

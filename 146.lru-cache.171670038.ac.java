@@ -42,6 +42,8 @@
  * 
  */
 class LRUCache {
+    //Tag:All
+    //Tag:Design
     class DLinkedNode{
         DLinkedNode pre;
         DLinkedNode next;

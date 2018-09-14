@@ -60,8 +60,13 @@
  * 
  */
 class Solution {
+    //Tag:Amazon
+    //Tag:Bloomberg
+    //Tag:Facebook
+    //Tag:DP
+    //Tag:backtracking
     HashMap<String, List<String>> map = new HashMap<String,List<String>>();
-    
+    //space & time:O(2^n)
     public List<String> wordBreak(String s, List<String> wordDict) {
         
         
@@ -85,6 +90,7 @@ class Solution {
             }
         }
         
+        //add memory, but still worst case not changed
         map.put(s, result);
         
         return result;

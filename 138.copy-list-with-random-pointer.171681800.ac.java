@@ -27,7 +27,12 @@
  * };
  */
 public class Solution {
+    //Tag:All
+    //Tag:HashTable
+    //Tag:LinkedList
     public RandomListNode copyRandomList(RandomListNode head) {
+        //This way, no need to use map to save match
+        
         //first, put as 1, 1', 2, 2'
         RandomListNode copy = head, next;
         while(copy!=null){
@@ -58,6 +63,7 @@ public class Solution {
         while(copy!=null){
             newHead.next = copy.next;
             newHead=newHead.next;
+            //should not modify original list
             copy.next = copy.next.next;
             copy = copy.next;
         }

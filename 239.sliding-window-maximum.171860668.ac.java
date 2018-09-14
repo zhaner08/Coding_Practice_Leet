@@ -39,10 +39,16 @@
  * 
  */
 class Solution {
+    //Tag:Amazon
+    //Tag:Facebook
+    //Tag:Bloomberg
+    //Tag:Heap
     public int[] maxSlidingWindow(int[] nums, int k){
         if(nums==null || nums.length==0) return new int[0];
         //if larger, eliminate all previous, since they will never be the max;
         //if keep decreasing, take the head as the max
+        
+        //deque has all but more(first/last) first is front（head)
         Deque<Integer> dq = new ArrayDeque<Integer>();
         int[] result = new int[nums.length-k+1];
         for(int i=0; i<nums.length; i++){
@@ -56,9 +62,10 @@ class Solution {
                 }
             }
             dq.add(tmp);
+            //add first, then remove the earliest one depends on condition
             
-            if(i>=k-1){
-                if(i-k>=0 && dq.peek()==nums[i-k])
+            if(i>=k-1){//start to calculate max
+                if(i-k>=0 && dq.peek()==nums[i-k]) //start to eliminate number
                 dq.removeFirst();
                 result[i-k+1]=dq.peek();
                 

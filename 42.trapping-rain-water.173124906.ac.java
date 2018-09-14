@@ -24,6 +24,10 @@
  * Output: 6
  */
 class Solution {
+    //Tag:All
+    //Tag:Array
+    //Tag:TwoPointer
+    //Tag:Stack
     public int trap(int[] height) {
         if(height == null || height.length<3) return 0;
         int left = 0;
@@ -32,6 +36,7 @@ class Solution {
         int rightMax = 0;
         int total = 0;
         while(left<=right){
+            //The side we dont take care will alwasy be maximum of all time so far, that is why we only handle one side's maximum at a time
             if(height[left]<height[right]){
                     if(height[left]<leftMax){
                         total+=leftMax-height[left];

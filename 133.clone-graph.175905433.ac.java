@@ -65,6 +65,14 @@
  * };
  */
 public class Solution {
+    //Tag:Facebook
+    //Tag:Amazon
+    //Tag:Microsoft
+    //Tag:Google
+    //Tag:PocketGames
+    //Tag:DFS
+    //Tag:BFS
+    //Tag:Graph
     private Map<Integer, UndirectedGraphNode> m = new HashMap<Integer, UndirectedGraphNode>();
     
     public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {

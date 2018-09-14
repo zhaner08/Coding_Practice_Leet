@@ -28,6 +28,9 @@
  * 
  */
 class Solution {
+    //Tag:All
+    //Tag:HashTable
+    //Tag:String
     public int firstUniqChar(String s) {
         char[] m = new char[26];
         for(int i=0; i<s.length(); i++){

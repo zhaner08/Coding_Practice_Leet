@@ -40,7 +40,16 @@
  * 
  */
 class Solution {
-    
+    //Tag:Amazon
+    //Tag:Google
+    //Tag:Facebook
+    //Tag:Lyft
+    //Tag:Uber
+    //Tag:Microsoft
+    //Tag:All
+    //Tag:DFS
+    //Tag:BFS
+    //Tag:UnionFind
     public int numIslands(char[][] grid) {
         int n = 0;
         for(int i=0; i<grid.length; i++){

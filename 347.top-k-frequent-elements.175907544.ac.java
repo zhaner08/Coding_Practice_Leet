@@ -24,6 +24,9 @@
  * 
  */
 class Solution {
+    //Tag:All
+    //Tag:HashTable
+    //Tag:Heap
     public List<Integer> topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> m = new HashMap<Integer, Integer>();
         for(int i=0; i<nums.length; i++){

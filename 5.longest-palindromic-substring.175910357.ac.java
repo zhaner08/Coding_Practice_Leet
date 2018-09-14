@@ -29,6 +29,10 @@
  * 
  */
 public class Solution {
+    //Tag:All
+    //Tag:String
+    //Tag:DP
+    //O(n^2)
     int lowerindex = 0;
     int max = 0;
     public String longestPalindrome(String s) {

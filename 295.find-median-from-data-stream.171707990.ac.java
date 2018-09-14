@@ -47,6 +47,7 @@ class MedianFinder {
         max = new PriorityQueue();//max from small to large
         min = new PriorityQueue(1000, Collections.reverseOrder());//min from large to small
         
+        //max is larger part, by default, number sort from small to large, and poll remove the smallest number
     }
     
     public void addNum(int num) {

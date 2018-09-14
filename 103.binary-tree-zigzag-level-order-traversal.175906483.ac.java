@@ -45,6 +45,10 @@
  * }
  */
 class Solution {
+    //Tag:All
+    //Tag:Stack
+    //Tag:Tree
+    //Tag:BFS
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if(root == null) return result;
@@ -56,14 +60,12 @@ class Solution {
             List<Integer> cur = new ArrayList<Integer>();
             for(int i=0; i<size; i++){
                 TreeNode tmp = q.poll();
-                if(tmp!=null){
-                    if(tmp.left!=null) q.offer(tmp.left);
-                    if(tmp.right!=null) q.offer(tmp.right);
-                    if(reverse){
-                        cur.add(0, tmp.val);
-                    }else{
-                        cur.add(tmp.val);
-                    }
+                if(tmp.left!=null) q.offer(tmp.left);
+                if(tmp.right!=null) q.offer(tmp.right);
+                if(reverse){
+                    cur.add(0, tmp.val);
+                }else{
+                    cur.add(tmp.val);
                 }
             }
             reverse = !reverse;

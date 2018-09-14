@@ -63,6 +63,8 @@
  * 
  */
 class Solution {
+    //Tag:All
+    //Tag:BFS
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Set<String> beginList = new HashSet<String>();
         Set<String> endList = new HashSet<String>();
@@ -114,7 +116,7 @@ class Solution {
             beginList = newSet;
             
             length++;
-            
+            //because bfs, it list all words with minumum move every loop, when find answer, it has to be minimum length
         }
         return 0;
     }

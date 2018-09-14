@@ -38,6 +38,12 @@
  * Given target = 20, return false.
  */
 class Solution {
+    //Tag:Amazon
+    //Tag:Microsoft
+    //Tag:GS
+    //Tag:Bloomberg
+    //Tag:BinarySearch
+    //Tag:DivideAndConquer
     public boolean searchMatrix(int[][] matrix, int target) {
         if(matrix==null || matrix.length==0) return false;
         int i = 0;
