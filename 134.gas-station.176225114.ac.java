@@ -72,6 +72,10 @@
  * 
  */
 class Solution {
+    //Tag:Amazon
+    //Tag:Google
+    //Tag:Microsoft
+    //Tag:Greedy
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int length = cost.length;
         int total = 0;
@@ -79,13 +83,14 @@ class Solution {
         int index = 0;
         for(int i=0; i<length; i++){
             int remain = gas[i]-cost[i];
+            //if smaller, reset index
             if(sum<0){
                 sum = remain;
                 index = i;
             }else{
                 sum += remain;
             }
-            total+= remain;
+            total+= remain; //keep track of total, it must be larger than 0 to have total gas
         }
         if(total>=0) return index;
         return -1;

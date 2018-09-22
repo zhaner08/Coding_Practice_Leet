@@ -21,6 +21,11 @@
  * 
  */
 public class Solution {
+    //Tag:Amazon
+    //Tag:Microsoft
+    //Tag:String
+    //Tag:Backtracking
+    //O(n^3)
     public List<String> restoreIpAddresses(String s) {
         List<String> res = new ArrayList<String>();
         int len = s.length();

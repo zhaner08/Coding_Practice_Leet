@@ -33,6 +33,12 @@
  * }
  */
 class Solution {
+    //Tag:Amazon
+    //Tag:Walmart
+    //Tag:TripleByte
+    //Tag:BinarySearch
+    //Tag:Tree
+    //O(n^2)
     public int kthSmallest(TreeNode root, int k) {
         int size = -1;
         while(root!=null){

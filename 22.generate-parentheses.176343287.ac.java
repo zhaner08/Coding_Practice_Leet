@@ -28,6 +28,13 @@
  * 
  */
 public class Solution {
+    //Tag:Amazon
+    //Tag:Google
+    //Tag:Uber
+    //Tag:Adobe
+    //Tag:String
+    //Tag:Backtracking
+    //O(2^n)
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<String>();
         generateList("", n, n, result);

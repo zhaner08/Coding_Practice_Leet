@@ -22,19 +22,40 @@
  * decoded to the original URL.
  */
 public class Codec {
+    //Tag:Amazon
+    //Tag:Microsoft
+    //Tag:Google
+    //Tag:Uber
+    //Tag:HashTable
+    //Tag:Math
+    
+    private static final String BASE_HOST = "http://tinyurl.com/";
+    private static final String SEED = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     //pretend this is a database
-    List<String> urls = new ArrayList<String>();
+    Map<String, String> urlToTiny = new HashMap<>();
+    Map<String, String> tinyToURL = new HashMap<>();
     // Encodes a URL to a shortened URL.
     public String encode(String longUrl) {
         //same url doesnt need to have same shorten url
-        urls.add(longUrl);
-        return urls.size()-1 +"";
+        if(urlToTiny.containsKey(longUrl)) return BASE_HOST+urlToTiny.get(longUrl);
+        String newURL = null;
+        do{
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i<6; i++){
+                char tmp = SEED.charAt((new java.util.Random()).nextInt(SEED.length()));
+                sb.append(tmp);
+            }
+            newURL = sb.toString();
+        } while(tinyToURL.containsKey(newURL));
+        urlToTiny.put(longUrl, newURL);
+        tinyToURL.put(newURL, longUrl);
+        return BASE_HOST + newURL;
     }
 
     // Decodes a shortened URL to its original URL.
     public String decode(String shortUrl) {
-        int index = Integer.valueOf(shortUrl);
-        return index<urls.size()? urls.get(index):"";
+        String url = shortUrl.replace(BASE_HOST, "");
+        return tinyToURL.containsKey(url)? tinyToURL.get(url) :"";
     }
 }
 

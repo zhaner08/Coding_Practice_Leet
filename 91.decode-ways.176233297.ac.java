@@ -40,19 +40,31 @@
  * 
  */
 class Solution {
+    //Tag:Facebook
+    //Tag:Amazon
+    //Tag:Google
+    //Tag:String
+    //Tag:DP
     public int numDecodings(String s) {
-        if(s==null || s.length()==0) return 0;
-        int[] dp = new int[s.length()+1];
-        dp[s.length()] = 1;
-        for(int i=s.length()-1; i>=0; i--){
-            if(s.charAt(i)=='0') dp[i] = 0;
-            else if(i ==s.length()-1 || Integer.parseInt(s.substring(i, i+2))>26){
-                dp[i] = dp[i+1];
+        String input = s;
+        if(input==null || input.length()==0) return 0;
+
+        int result =0;
+        int first = 1;
+        int second = 1;
+
+        for(int i=input.length()-1; i>=0; i--){
+            if(input.charAt(i)=='0') result = 0;
+            else if( i==input.length()-1 || Integer.parseInt(input.substring(i, i+2)) >26){//if last digit, or two digits > 26, treat as single digit only
+                result = first;
             }else{
-                dp[i] = dp[i+1]+dp[i+2];
+                result = first + second;
             }
+            second = first;
+            first = result;//result is irrelevant now
+
         }
-        return dp[0];
+        return result;
     }
 }
 

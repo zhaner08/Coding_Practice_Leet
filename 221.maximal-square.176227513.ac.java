@@ -27,6 +27,10 @@
  * 
  */
 public class Solution {
+    //Tag:Amazon
+    //Tag:Google
+    //Tag:Alibaba
+    //Tag:DP
     public int maximalSquare(char[][] matrix) {
         if(matrix.length==0) return 0;
         //Since input is char, so better create an int matrix
@@ -45,13 +49,14 @@ public class Solution {
         {
             tmp[i][0] = matrix[i][0]-'0';
             result=Math.max(tmp[i][0], result);
+            //handle left most 1, start from 1
             for(int j=1; j<c; j++)
             {
                 //Increase the position by 1 only if left, left up, up are same, otherwise take the min of three
                 //If current is 0, no need to check since it will never form a square
                 if(matrix[i][j]=='1')
                 {
-                    tmp[i][j]=Math.min(Math.min(tmp[i][j-1], tmp[i-1][j-1]), tmp[i-1][j])+1;
+                    tmp[i][j]=Math.min(Math.min(tmp[i][j-1], tmp[i-1][j-1]), tmp[i-1][j])+1;//have to check -1,-1 as well
                     result=Math.max(tmp[i][j], result);
                 }
             }

@@ -38,6 +38,9 @@
  * }
  */
 class Solution {
+    //Tag:All
+    //Tag:Array
+    //Tag:Sort
     public List<Interval> merge(List<Interval> intervals) {
         int length = intervals.size();
         if(length<2) return intervals;

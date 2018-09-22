@@ -42,6 +42,13 @@
  * 
  */
 class MinStack {
+    //Tag:Apple
+    //Tag:Google
+    //Tag:Bloomberg
+    //Tag:Uber
+    //Tag:Apple
+    //Tag:Design
+    //Tag:Stack
     Stack<Long> s;
     long min;
 
@@ -70,7 +77,7 @@ class MinStack {
             if(s.peek()>=0){
                 s.pop();
             }else{
-                long tmp = s.pop();
+                long tmp = s.pop();//min become larger
                 min = min-tmp;
             }
         }

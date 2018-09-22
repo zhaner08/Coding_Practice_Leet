@@ -38,6 +38,8 @@
  * 
  */
 class Solution {
+    //Tag:All
+    //Tag:DP
     public int maxProfit(int[] prices) {
         if(prices==null || prices.length<2) return 0;
         int sum = 0;
@@ -45,7 +47,7 @@ class Solution {
         for(int i=1; i<prices.length; i++){
             int diff= prices[i]-prices[i-1];
             sum+=diff;
-            if(sum<0) sum=0;
+            if(sum<0) sum=0;//rather not to buy
             result = Math.max(result, sum);
         }
         return result;

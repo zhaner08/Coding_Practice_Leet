@@ -49,6 +49,9 @@
  * 
  */
 class Solution {
+    //Tag:All
+    //Tag:DP
+    //O(n^3)
     public boolean wordBreak(String s, List<String> wordDict) {
         
         boolean[] dp = new boolean[s.length()+1];

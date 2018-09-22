@@ -41,16 +41,16 @@
  * 
  * 
  */
-public class Solution {
+class Solution {
+    //Tag:All
+    //Tag:Math
+    //Tag:BinarySearch
     public double myPow(double x, int n) {
-        if(n==0){return 1;}
-        if(n==1){return x;}
-        //if n<0, then use reciprocal to *
-        if(n<0){n=-n; x=1/x;}
-        //if still can be divide, then continue
-        double mul = myPow(x, n/2);
-        //the result will be X*X, and returned to be used by previous one
-        return n%2==1 ? mul*mul*x : mul*mul;
+        if(n == 0)
+            return 1;
+        if(n<0){
+            return 1/x * myPow(1/x, -(n + 1)); //take care of the overflow
+        }
+        return (n%2 == 0) ? myPow(x*x, n/2) : x*myPow(x*x, n/2);
     }
-    //Recursive, divide by 2 every time until n=0; %=0, other wise, use the result * result from bottom up
 }

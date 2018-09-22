@@ -45,7 +45,12 @@
  * 
  */
 public class Solution {
+    //Tag:Amazon
+    //Tag:Twitter
+    //Tag:Array
+    //Tag:BinarySearch
     public boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix==null || matrix.length == 0 || matrix[0].length==0) return false;
         int m = matrix.length;
         int n = matrix[0].length;
         //treated the matrix as an array, and use binary search. when need specfic location /m %m
@@ -56,7 +61,7 @@ public class Solution {
         {
             int middle = (l+r-1)/2;
             if(target>matrix[middle/n][middle%n]){l=middle+1;}
-            else { r=middle;}
+            else { r=middle;} //r = middle if smaller or equal
         }
         return matrix[r/n][r%n]==target;
     }

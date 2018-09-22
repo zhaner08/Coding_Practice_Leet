@@ -30,6 +30,10 @@
  * 
  */
 class Solution {
+    //Tag:All
+    //Tag:HashTable
+    //Tag:TwoPointers
+    //Tag:String
     public String minWindow(String s, String t) {
         int[] m = new int[256];
         int start = 0;
@@ -37,6 +41,7 @@ class Solution {
         int end = 0;
         int counter = t.length();
         int result = Integer.MAX_VALUE;
+        
         //load the t into map
         for(int i=0; i< t.length(); i++){
             m[t.charAt(i)]++;

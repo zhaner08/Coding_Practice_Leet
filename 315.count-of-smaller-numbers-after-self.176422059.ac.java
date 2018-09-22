@@ -32,6 +32,13 @@
  * 
  */
 public class Solution {
+    //Tag:Amazon
+    //Tag:Apple
+    //Tag:Google
+    //Tag:DivideAndConquer
+    //Tag:BinaryIndexedTree
+    //Tag:SegmentTree
+    //Tag:BinarySearchTree
     class Node{
         Node left;
         Node right;
@@ -53,6 +60,7 @@ public class Solution {
         return Arrays.asList(ans);
     }
     
+    //originally will take O(N^2), use a tree to degree the search time
     public Node insert(int num, Node root, Integer[] ans, int i, int presum)
     {
         //if new tree node
@@ -69,7 +77,7 @@ public class Solution {
         else if(root.val < num)
         {
             root.right = insert(num, root.right, ans, i, presum + root.sum + root.dup);
-            //sum is all number(smaller than root) on the left, update every iteration
+            //sum is all number(smaller than root) on the left, update every iteration after that level
             //duplicate is root its self
             //log(n) to go down the tree
         }
